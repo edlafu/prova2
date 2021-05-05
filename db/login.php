@@ -78,7 +78,7 @@ function create_session($user){
   //here we will create the sessions
   $_SESSION["username"] = $user;
   
-  header("Location: ../edituser.php");
+  header("Location: ../menuuser.php");
   die();
 
 }

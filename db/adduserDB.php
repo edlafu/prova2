@@ -18,9 +18,9 @@ include "../connection.php";
     $bio = $_POST["bio"];
 
 //escribim la consulta que voldrem executar
-$sql = "INSERT INTO $taula (username, mail, password, realname, birthdaydate,bio ) VALUES ('$username','$mail', '$password', '$name', '$birthdaydate', '$bio')";
+$sql = "INSERT INTO $taula (username, mail, password, realname, birthdaydate, bio ) VALUES ('$username','$mail', '$password', '$name', '$birthdaydate', '$bio')";
 
-$sql_id = "SELECT * FROM $taula ORDER BY data_creacio DESC LIMIT 1"; 
+$sql_id = "SELECT * FROM $taula ORDER BY singupdate DESC LIMIT 1"; 
 // rebem l'id que posara el nom a la imatge
 
 //fem la connexió
@@ -64,7 +64,7 @@ $ruta_temporal = $_FILES['imagen']['tmp_name'];
 }else{
   if(move_uploaded_file($ruta_temporal, $ruta_desti)){
     echo "El archivo se ha cargado.";
-    header("Location: ../index.php");
+    header("Location: ../menuuser.php");
     die();
   }else{
     echo " Epic fail, sorry...";

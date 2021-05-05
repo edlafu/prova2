@@ -33,10 +33,10 @@ function processData() {
           // Now in hours, minutes and seconds, you have the time you need.
           console.clear();
           console.log(hours + ":" + minutes + ":" + seconds);
-          // timer.innerHTML = "Tu contador se ha puesto a " hours + ":" + minutes + ":" + seconds+ " segundos.";
+          timer.innerHTML = "Tu contador se ha puesto a "+hours+":"+minutes+":"+seconds+" segundos.";
           if (c == 0) {
               clearInterval(myTimer); // fin del temporizador.
-          }
+          } 
       }
     }
 /////////////////////////////////////////////////////////////

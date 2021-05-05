@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-04-2021 a las 14:14:54
+-- Tiempo de generación: 05-05-2021 a las 13:55:37
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `usuarios`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contactos`
+--
+
+CREATE TABLE `contactos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `mail` varchar(30) NOT NULL,
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -45,13 +58,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `mail`, `password`, `realname`, `status`, `birthdaydate`, `bio`, `singupdate`, `lastlogin`) VALUES
-(1, 'aaaaaa', 'a@a.com', 'aaaaaa', 'aaaaaa', 1, '2021-04-01', 'aaaaaaaaaaaaaaaaaaaaaaaaa', '2021-04-12 12:00:18', '2021-04-12 12:00:18'),
-(2, 'bbbbbb', 'b@b.com', 'bbbbbb', 'bbbbbb', 1, '2020-12-31', 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '2021-04-12 12:34:58', '2021-04-12 12:34:58'),
-(4, 'cccccc', 'c@c.com', 'cccccc', 'cccccc', 1, '2021-01-16', 'ccccccccccccccccccccccccccccccccccccccccccccc', '2021-04-13 10:55:11', '2021-04-13 10:55:11');
+(9, 'aaaaaa', 'a@a.com', 'aaaaaa', 'aaaaaa', 0, '2021-04-30', 'aaaaaa', '2021-05-04 14:25:09', '2021-05-04 14:25:09'),
+(10, 'bbbbbb', 'b@b.com', 'bbbbbb', 'bbbbbb', 0, '2021-04-30', 'bbbbbbbbbbbbbbb', '2021-05-04 14:30:23', '2021-05-04 14:30:23');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `contactos`
+--
+ALTER TABLE `contactos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `mail` (`mail`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indices de la tabla `users`
@@ -66,10 +86,26 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `contactos`
+--
+ALTER TABLE `contactos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `contactos`
+--
+ALTER TABLE `contactos`
+  ADD CONSTRAINT `contactos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
