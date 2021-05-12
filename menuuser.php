@@ -35,7 +35,7 @@ if (!isset($_SESSION["username"])){ //if user are not loged in go login
     	<nav class="nav-container style-3">
         <a href="edituser.php" class="nav-item">Ver o editar Perfil</a>
         <a href="newcontact.php" class="nav-item">Añadir contacto de confianza</a>
-				<a href="contador.html" class="nav-item">Iniciar un contador</a>	
+				<a href="contador.php" class="nav-item">Iniciar un contador</a>	
 				<a href="map.php" class="nav-item">Visualizar el mapa</a>				
     </nav>
 </div>

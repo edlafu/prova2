@@ -17,7 +17,7 @@ function processData() {
   }
   // return data;
   }
-///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
   function clock(data) {
     console.log(data);
       myTimer = setInterval(myClock, 1000);
@@ -36,7 +36,32 @@ function processData() {
           timer.innerHTML = "Tu contador se ha puesto a "+hours+":"+minutes+":"+seconds+" segundos.";
           if (c == 0) {
               clearInterval(myTimer); // fin del temporizador.
-          } 
+              var contacto = "<?php echo $contactos[]; ?>";
+              document.getElementById("contactset").innerHTML = "El contacto seleccionado es:"+contacto+".";
+              // var code = prompt("Introduce tu codigo de seguridad);
+
+              // if (code != null) {
+                //https://www.youtube.com/watch?v=wTmFilUkClY
+              //    Email.send({  
+                
+
+            //     Host : "smtp.gmail.com",
+            //     Username : "username", 
+            //     Password : "password", 
+            //     To : 'them@website.com', //contact mail
+            //     From : "you@isp.com", // usermail
+            //     Subject : "Help!",
+            //     Body : "SOS"
+            // }).then(
+            //   message => alert(message)
+            // );
+            
+            
+            // Empezar el envio de correo SOS
+              //   }else{reactivar myTimer}
+
+
+          }
       }
     }
 /////////////////////////////////////////////////////////////

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-05-2021 a las 13:55:37
+-- Tiempo de generación: 12-05-2021 a las 11:52:54
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -34,32 +34,15 @@ CREATE TABLE `contactos` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `users`
+-- Volcado de datos para la tabla `contactos`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `mail` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `realname` varchar(30) NOT NULL,
-  `status` int(11) NOT NULL,
-  `birthdaydate` date NOT NULL,
-  `bio` varchar(100) NOT NULL,
-  `singupdate` datetime NOT NULL DEFAULT current_timestamp(),
-  `lastlogin` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id`, `username`, `mail`, `password`, `realname`, `status`, `birthdaydate`, `bio`, `singupdate`, `lastlogin`) VALUES
-(9, 'aaaaaa', 'a@a.com', 'aaaaaa', 'aaaaaa', 0, '2021-04-30', 'aaaaaa', '2021-05-04 14:25:09', '2021-05-04 14:25:09'),
-(10, 'bbbbbb', 'b@b.com', 'bbbbbb', 'bbbbbb', 0, '2021-04-30', 'bbbbbbbbbbbbbbb', '2021-05-04 14:30:23', '2021-05-04 14:30:23');
+INSERT INTO `contactos` (`id`, `nombre`, `mail`, `id_usuario`) VALUES
+(14, 'aitor', 'aitor@tilla.com', 9),
+(15, 'aitor', 'aitor@tilla.com', 10),
+(16, 'Rosa Melano', 'rosa@melano.com', 9),
+(17, 'efe', 'e@e.com', 9);
 
 --
 -- Índices para tablas volcadas
@@ -70,16 +53,8 @@ INSERT INTO `users` (`id`, `username`, `mail`, `password`, `realname`, `status`,
 --
 ALTER TABLE `contactos`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `mail` (`mail`),
-  ADD KEY `id_usuario` (`id_usuario`);
-
---
--- Indices de la tabla `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `mail` (`mail`);
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `mail` (`mail`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -89,13 +64,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT de la tabla `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
